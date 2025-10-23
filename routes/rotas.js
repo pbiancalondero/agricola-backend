@@ -6,7 +6,6 @@ const { rotasSafras } = require('./rotasSafras');
 
 const rotas = new Router();
 
-// Registro das rotas principais
 rotas.use(rotasProdutores);
 rotas.use(rotasCultivos);
 rotas.use(rotasSafras);
