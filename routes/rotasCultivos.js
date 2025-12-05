@@ -8,15 +8,17 @@ const {
     getCultivoPorId
 } = require('../controllers/cultivoController');
 
+const { verificarJWT } = require('../controllers/segurancaController')
+
 const rotasCultivos = new Router();
 
 rotasCultivos.route('/cultivo')
-    .get(getCultivos)
-    .post(addCultivo)
-    .put(updateCultivo);
+    .get(verificarJWT,getCultivos)
+    .post(verificarJWT,addCultivo)
+    .put(verificarJWT,updateCultivo);
 
 rotasCultivos.route('/cultivo/:id')
-    .get(getCultivoPorId)
-    .delete(deleteCultivo);
+    .get(verificarJWT,getCultivoPorId)
+    .delete(verificarJWT,deleteCultivo);
 
 module.exports = { rotasCultivos };

@@ -7,6 +7,8 @@ const {
 } = require('../usecases/produtorUseCases');
 
 const getProdutores = async (request, response) => {
+    const produtor = request.produtor;
+    console.log('Produtor recebido no token: ' + JSON.stringify(produtor));
     await getProdutoresDB()
         .then(data => response.status(200).json(data))
         .catch(err => response.status(400).json({

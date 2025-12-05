@@ -8,15 +8,17 @@ const {
     getProdutorPorId
 } = require('../controllers/produtorController');
 
+const { verificarJWT } = require('../controllers/segurancaController')
+
 const rotasProdutores = new Router();
 
 rotasProdutores.route('/produtor')
-    .get(getProdutores)
+    .get(verificarJWT,getProdutores)
     .post(addProdutor)
-    .put(updateProdutor);
+    .put(verificarJWT,updateProdutor);
 
 rotasProdutores.route('/produtor/:id')
-    .get(getProdutorPorId)
-    .delete(deleteProdutor);
+    .get(verificarJWT,getProdutorPorId)
+    .delete(verificarJWT,deleteProdutor);
 
 module.exports = { rotasProdutores };

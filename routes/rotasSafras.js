@@ -8,15 +8,17 @@ const {
     getSafraPorId
 } = require('../controllers/safraController');
 
+const { verificarJWT } = require('../controllers/segurancaController')
+
 const rotasSafras = new Router();
 
 rotasSafras.route('/safra')
-    .get(getSafras)
-    .post(addSafra)
-    .put(updateSafra);
+    .get(verificarJWT,getSafras)
+    .post(verificarJWT,addSafra)
+    .put(verificarJWT,updateSafra);
 
 rotasSafras.route('/safra/:id')
-    .get(getSafraPorId)
-    .delete(deleteSafra);
+    .get(verificarJWT,getSafraPorId)
+    .delete(verificarJWT,deleteSafra);
 
 module.exports = { rotasSafras };
