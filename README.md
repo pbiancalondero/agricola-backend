@@ -1,6 +1,6 @@
-# 🌱 Agrícola API – Gestão Agrícola
+# 🌱 Sistema de Produção Agrícola — API
 
-API desenvolvida em Node.js + Express para o projeto Agrícola, com foco em gestão agrícola, permitindo o controle de produtores, cultivos e safras.
+API desenvolvida em Node.js + Express para o Sistema de Produção Agrícola, com foco em gestão agrícola, permitindo o controle de produtores, cultivos e safras.
 Este projeto foi desenvolvido para a disciplina de Programação para Web, aplicando conceitos de arquitetura em camadas, CRUD, autenticação JWT e integração com banco de dados PostgreSQL.
 
 ---
